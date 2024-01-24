@@ -4,13 +4,13 @@ use Google\Client;
 use Google\Service\Sheets;
 use Google\Service\Drive;
 
+$result = array("status"=>"","fields"=>[]);
 try {		
 
     $email_val = $_POST["email"];
     $tel_val = $_POST["tel"];
     $name_val = $_POST["name"];
-    $date = $_POST["date"];
-    $result = array("status"=>"","fields"=>[]);
+    $date = $_POST["date"];    
 
     $tel_val = preg_replace('/[^0-9]/',"",$tel_val);
 
