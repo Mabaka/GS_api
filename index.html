@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="script.js"></script>
+    <title>GS</title>
+</head>
+<body>
+    <style>
+        .err { background: #ffe6ee; border: 1px solid #b1395f; }
+        .emsg { color: #c12020; font-weight: bold; }
+    </style>
+    <div class="form_wrapper container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5">                    
+                    <form onsubmit="return false" id="form" class="form row g-3 justify-content-center align-items-center" method="post">
+                        <div class="col-md-12">                            
+                            <label for="email">Электронная почта</label>
+                            <input class="input form-control" type="email" name="email" id="email">
+                            <div id="eemail" class="emsg"></div>
+                        </div>
+                        <div class="col-md-12">        
+                            <label for="tel">Номер телефона</label>                                     
+                            <input class="input form-control" type="tel" name="tel" id="tel">
+                            <div id="etel" class="emsg"></div>
+                        </div>
+                        <div class="col-md-12">                            
+                            <label for="name">Имя</label>
+                            <input class="input form-control" type="text" name="name" id="name" placeholder="Имя">
+                            <div id="ename" class="emsg"></div>
+                        </div>
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-3">                                                                                                
+                                <button type="submit" id="send" class="btn btn-success">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
