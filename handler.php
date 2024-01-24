@@ -76,7 +76,7 @@ try {
 
     $log_text = $date . ' ' . $log_text;
 	file_put_contents('log.txt', $log_text . PHP_EOL, FILE_APPEND);
-
+    
     exit();
 } catch (Exception $e) {
     $log_text = $e->getMessage();
@@ -85,5 +85,5 @@ try {
 
     $result["status"] = "server_error";
     header("Content-Type: application/json");
-    echo json_encode($log_text);
+    echo json_encode($result);
 }
