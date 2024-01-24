@@ -18,6 +18,9 @@ $(document).ready(() => {
         $('.input').each((i,obj)=>{
             obj.classList.remove('err');
         });
+
+        $('#ecommon')[0].classList.remove('err');
+        $('#ecommon')[0].innerHTML = "";
     
         $.ajax({
             type:"post",
@@ -29,14 +32,22 @@ $(document).ready(() => {
                 email:email.val(),
                 date:date
             },
-            success: (res)=>{                                   
-                res.fields.forEach(field => {                    
-                    $(`#${field}`)[0].classList.add("err");
-                    $(`#e${field}`)[0].innerHTML = "Введенные данные некорректны";
-                });
+            success: (res)=>{                   
+                if (res.status == "field_error"){
+                    res.fields.forEach(field => {                    
+                        $(`#${field}`)[0].classList.add("err");
+                        $(`#e${field}`)[0].innerHTML = "Введенные данные некорректны";
+                    });
+                } 
+                
+                if(res.status == "server_error"){
+                    $('#ecommon')[0].classList.add("err");
+                    $('#ecommon')[0].innerHTML = "Ошибка на стороне сервера.";    
+                }
             },
             error: (err,exception)=>{
-                console.log(err);
+                $('#ecommon')[0].classList.add("err");
+                $('#ecommon')[0].innerHTML = "Ошибка на стороне сервера.";
             }
         })
     })
