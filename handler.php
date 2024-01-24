@@ -76,8 +76,7 @@ try {
 
     $log_text = $date . ' ' . $log_text;
 	file_put_contents('log.txt', $log_text . PHP_EOL, FILE_APPEND);
-    
-    exit();
+        
 } catch (Exception $e) {
     $log_text = $e->getMessage();
     $date = date('Y-m-d H:m:s.v');
@@ -87,3 +86,5 @@ try {
     header("Content-Type: application/json");
     echo json_encode($result);
 }
+
+exit();
