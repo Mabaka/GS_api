@@ -18,7 +18,7 @@ try {
 
     $email_correct = preg_match('/^\S+@\S+\.\S+/',$email_val);
     
-    $name_is_not_correct = strlen($name_val) > 0 ? preg_match('/[^А-ЯЁа-яё\s]$/u',$name_val) : false;
+    $name_is_not_correct = strlen($name_val) > 0 ? preg_match('/[^А-ЯЁа-яё\s]$/u',$name_val) : true;
     $log_text = "Не валидные данные";
     if(!$email_correct){
         $result["status"] = "error";    
