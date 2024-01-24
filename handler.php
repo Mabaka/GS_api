@@ -16,7 +16,7 @@ try {
 
     $tel_is_correct = strlen($tel_val) == 11;
 
-    $email_correct = preg_match('/^\S+@\S+\.\S+/',$email_val);
+    $email_correct = preg_match('/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/',$email_val);
     
     $name_is_not_correct = strlen($name_val) > 0 ? preg_match('/[^А-ЯЁа-яё\s]$/u',$name_val) : true;
     $log_text = "Не валидные данные";

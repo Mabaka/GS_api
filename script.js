@@ -32,7 +32,7 @@ $(document).ready(() => {
             success: (res)=>{                                   
                 res.fields.forEach(field => {                    
                     $(`#${field}`)[0].classList.add("err");
-                    $(`#e${field}`)[0].innerHTML = "Введеные данные не корректны";
+                    $(`#e${field}`)[0].innerHTML = "Введенные данные некорректны";
                 });
             },
             error: (err,exception)=>{
